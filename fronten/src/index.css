@@ -150,3 +150,10 @@ background-color: black;
 .input:checked + .toggle .star--5 { transition-delay: 300ms; }
 .input:checked + .toggle .star--6 { transition-delay: 400ms; }
 
+
+/* ==== >> code icons <<=========*/
+
+.svgIcons:hover{
+  color: white;
+}
+

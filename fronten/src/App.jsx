@@ -10,9 +10,9 @@ const App = () => {
   const { theme } = useContext(GlobalContext)
 
   return (
-    <div className={`${theme ? "black" : "light"}`}>
+    <div className={`${theme ? "black" : "light"} `} >
       
-      <div className="container">
+      <div  className={`container`}>
         <Routes>
           <Route path="/" element={<UiRendering/>} />
           <Route path="/login" element={<Login/>} />
