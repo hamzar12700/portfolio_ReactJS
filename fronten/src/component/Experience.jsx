@@ -3,34 +3,34 @@ import ExperienceBoxes from './ExperienceBoxes'
 
 const Experience = () => {
     let expBox = [{
-        heading : "Frontend Web Developer",
-        para : "Html , css , js , Bootstrap , Tailwind Css"
+        heading: "Frontend Web Developer",
+        para: "Html , css , js , Bootstrap , Tailwind Css"
     },
-{
-    heading : "Backend Web Developer",
-    para : "Php , Laravel , Node js , Express js , Firebase , Sql Server , Mongodb"
-}
+    {
+        heading: "Backend Web Developer",
+        para: "Php , Laravel , Node js , Express js , Firebase , Sql Server , Mongodb"
+    }
 
-]
+    ]
     return (
-        <div className='h-120  '>
-            <h1 className='text-center font-bold text-6xl py-2 w-full'>Experience</h1>
+        <div className='min-h-150   '>
+            <h1 className='text-center font-bold sm:text-6xl text-5xl text-2xl py-2 w-full'>Experience</h1>
             {/* whole container  */}
-            <div className='flex '>
-            <div className='w-[100%] h-100 flex gap-2'>
-                {/* left side */}
-               {expBox.map((items)=>{
-                return <ExperienceBoxes heading={items.heading} para={items.para} />
-               })}
-                  {/* right side */}
-               {/* <ExperienceBoxes  /> */}
-            </div>
+            <div className='flex flex-col justify-center items-center  '>
+                    {/* left side */}
+                <div className='min-h-100 flex gap-2 sm:flex-row flex-col sm:w-full md:w-[80%]'>
+                    {expBox.map((items) => {
+                        return <ExperienceBoxes heading={items.heading} para={items.para} />
+                    })}
+                    {/* <ExperienceBoxes  /> */}
+                </div>
+                    {/* right side */}
                 <div className='w-1/2  h-100 flex justify-center items-center'>
-                <img
-                    src="/profile.jpeg"
-                    className="h-1/2 rounded-full"
-                    alt=""
-                />
+                    <img
+                        src="/profile.jpeg"
+                        className="h-1/2 rounded-full"
+                        alt=""
+                    />
                 </div>
             </div>
         </div>

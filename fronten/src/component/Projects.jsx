@@ -1,40 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../ContextApi/Context";
 import ProjectsBoxes from "./ProjectsBoxes";
 
 const Projects = () => {
-  const [user, setUser] = useState({});
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(""); // ✅ new state for error
 
-  const renderingCards = async () => {
-    try {
-      setLoading(true);
-      setError(""); // reset error
-
-      const userRes = await axios.get(
-        "https://api.github.com/users/hamzar12700"
-      );
-      setUser(userRes.data);
-
-      const repoRes = await axios.get(userRes.data.repos_url);
-      setRepos(repoRes.data);
-
-    } catch (err) {
-      console.log(err.message);
-
-      // GitHub rate limit error usually 403
-      if (err.response && err.response.status === 403) {
-        setError("GitHub API rate limit exceeded. Please try again later.");
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { renderingCards, user, repos, loading, error, } = useContext(GlobalContext)
 
   useEffect(() => {
     renderingCards();

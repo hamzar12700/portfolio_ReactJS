@@ -4,30 +4,41 @@ import { GlobalContext } from '../ContextApi/Context'
 const HeroSection = () => {
     const {theme} = useContext(GlobalContext)
     return (
-        <div className='w-full flex h-130' >
-            <div className="left w-[50%]  flex flex-col justify-center gap-4 ">
-                <h1 className="text-3xl font-bold">
-                    My Name is Muhammad Hamza Raza
-                </h1>
-
-                <h1 className="text-xl text-gray-600">
-                    I am Full Stack Web Developer
-                </h1>
-
-                <button className={`self-start mt-4 px-6 py-3 ${theme ? "bg-white" : "bg-black"}  bg-black ${theme ? "text-black" : "text-white"} rounded-lg font-medium  hover:bg-gray-800 transition-all duration-300 shadow-md}`} >
-                    Contact Us
-                </button>
-            </div>
-
-            <div className="right w-[50%] h-full flex justify-center items-center">
-                <img
-                    src="/profile.jpeg"
-                    className="h-1/2 rounded-full"
-                    alt=""
-                />
-            </div>
-
+        <div className="w-full flex flex-col md:flex-row sm:text-sm  justify-center min-h-screen  ">
+  
+        {/* Left Section */}
+        <div className="left w-full md:w-1/2 flex flex-col justify-center items-start gap-4 text-center md:text-left">
+          
+          <h1 className="text-2xl sm:text-2xl text-xl md:text-4xl font-bold">
+            My Name is Muhammad Hamza Raza
+          </h1>
+      
+          <h2 className="text-lg sm:text-xl text-gray-600">
+            I am Full Stack Web Developer
+          </h2>
+      
+          <button
+            className={` sm:text-sm md:text-1xl
+              w-full md:w-auto mt-4 px-6 py-3 rounded-lg font-medium shadow-md
+              transition-all duration-300
+              ${theme ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}
+            `}
+          >
+            Contact Us
+          </button>
         </div>
+      
+        {/* Right Section */}
+        <div className="right w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0">
+          <img
+            src="/profile.jpeg"
+            alt="Profile"
+            className="h-40 sm:h-52 md:h-64 rounded-full object-cover"
+          />
+        </div>
+      
+      </div>
+      
     )
 }
 

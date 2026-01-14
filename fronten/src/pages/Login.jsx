@@ -1,54 +1,21 @@
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { GlobalContext } from '../ContextApi/Context';
 
 const Login = () => {
-  const [login, setLogin] = useState(false);
-
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: ""
-  });
-
   const [showPassword, setShowPassword] = useState(false)
-
-  async function formSubmit(e) {
-    e.preventDefault(); 
-
-    try {
-      if (login) {
-        const res = await axios.post(
-          "http://localhost:5000/api/auth/login",
-          {
-            email: formData.email,
-            password: formData.password
-          },
-          { withCredentials: true }
-        );
-
-        console.log("Login Success:", res.data);
-      } else {
-        const res = await axios.post(
-          "http://localhost:5000/api/auth/signup",
-          {
-            name: formData.username,
-            email: formData.email,
-            password: formData.password
-          }
-        );
-
-        console.log("Signup Success:", res.data);
-      }
-    } catch (err) {
-      console.error(err.response?.data || err.message);
-    }
-  }
+  const { login,
+    setLogin,
+    formData,
+    setFormData, 
+  formSubmit
+  } = useContext(GlobalContext)
 
   return (
     <div className="loginContainer h-screen flex justify-center items-center">
-   <form
+      <form
         onSubmit={formSubmit}
         className="loginBox flex flex-col border h-[70%] w-[50%] justify-around items-center"
       >
@@ -90,7 +57,7 @@ const Login = () => {
           className="border w-[90%] px-5 py-4"
           placeholder="Enter Your Password"
         />
-      <div>  <input onChange={()=>setShowPassword(!showPassword)} type="checkbox"  /> {showPassword ? "Hide Password" : "Show Password"}</div>
+        <div>  <input onChange={() => setShowPassword(!showPassword)} type="checkbox" /> {showPassword ? "Hide Password" : "Show Password"}</div>
 
         <button
           type="submit" className="bg-red-800 px-10 py-2 rounded-full text-white">SUBMIT</button>
@@ -105,7 +72,7 @@ const Login = () => {
           </Link>
         </p>
       </form>
-      
+
     </div>
   );
 };
