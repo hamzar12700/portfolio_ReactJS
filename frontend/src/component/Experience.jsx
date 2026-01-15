@@ -1,7 +1,13 @@
 import React from 'react'
 import ExperienceBoxes from './ExperienceBoxes'
+import { useContext } from 'react'
+import { GlobalContext } from '../ContextApi/Context'
 
 const Experience = () => {
+
+
+    const {theme} = useContext(GlobalContext)
+
     let expBox = [{
         heading: "Frontend Web Developer",
         para: "Html , css , js , Bootstrap , Tailwind Css"
@@ -13,10 +19,10 @@ const Experience = () => {
 
     ]
     return (
-        <div className='min-h-150   '>
-            <h1 className='text-center font-bold sm:text-6xl text-5xl text-2xl py-2 w-full'>Experience</h1>
+       <div className={` min-h-[100vh]`}>
+            <h1 className='text-center font-bold sm:text-6xl text-5xl text-[40px] py-2 w-full'>Experience</h1>
             {/* whole container  */}
-            <div className='flex flex-col justify-center items-center  '>
+            <div className='flex md:flex-row flex-col justify-center items-center  '>
                     {/* left side */}
                 <div className='min-h-100 flex gap-2 sm:flex-row flex-col sm:w-full md:w-[80%]'>
                     {expBox.map((items) => {

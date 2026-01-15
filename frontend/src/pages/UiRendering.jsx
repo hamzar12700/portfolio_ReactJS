@@ -4,16 +4,24 @@ import HeroSection from '../component/HeroSection'
 import Navbar from '../component/Navbar'
 import Projects from '../component/Projects'
 import { GlobalContext } from '../ContextApi/Context'
+import Footer from '../component/Footer'
 
 const UiRendering = () => {
   const { theme } = useContext(GlobalContext)
+  // console.log(theme);
+  
   return (
-    <div  className={`${theme ? "black" : "light"}`}>
+   
+
+
+<div className='container'>
         <Navbar/>
         <HeroSection/>
         <Experience/>
         <Projects/>
+        <Footer/>
     </div>
+
   )
 }
 

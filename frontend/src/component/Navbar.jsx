@@ -8,11 +8,11 @@ const Navbar = () => {
   return (
     <div>
 
-    <div className='flex justify-between items-center h-20 '>
+    <div className='flex justify-between items-center h-20 fixed '>
         <h1 className='text-3xl font-bold cursor-pointer'>Hamza</h1>
         <ul className='md:flex items-center gap-8 hidden'>
             <li className=' cursor-pointer'>Home</li>
-            <li className=' cursor-pointer'>About</li>
+            <li className=' cursor-pointer'>About</li> 
             <li className=' cursor-pointer'>Services</li>
             <li className=' cursor-pointer'>Projects</li>
         </ul>

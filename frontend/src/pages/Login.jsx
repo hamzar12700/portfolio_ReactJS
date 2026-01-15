@@ -57,10 +57,26 @@ const Login = () => {
           className="border w-[90%] px-5 py-4"
           placeholder="Enter Your Password"
         />
-        <div>  <input onChange={() => setShowPassword(!showPassword)} type="checkbox" /> {showPassword ? "Hide Password" : "Show Password"}</div>
+        <div className='w-full text-end px-8'>  <input onChange={() => setShowPassword(!showPassword)} type="checkbox" /> {showPassword ? "Hide Password" : "Show Password"}</div>
 
-        <button
-          type="submit" className="bg-red-800 px-10 py-2 rounded-full text-white">SUBMIT</button>
+
+{/* ====== submit button ======= */}
+ <button
+  type="submit"
+  className="
+    bg-red-800 text-white
+    px-10 py-2 rounded-full
+    shadow-lg
+    transition-all duration-300 ease-in-out
+    hover:bg-red-700
+    hover:shadow-2xl
+    hover:scale-105
+    active:scale-95
+  "
+>
+  SUBMIT
+</button>
+
 
         <p>
           {login ? "Don't have an Account" : "Already Have an Account"}?{" "}
