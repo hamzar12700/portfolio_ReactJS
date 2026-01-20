@@ -6,7 +6,7 @@ import DarkBtn from './DarkBtn'
 const Navbar = () => {
     const {theme , setTheme} = useContext(GlobalContext)
   return (
-    <div>
+    <div className='relative'>
 
     <div className='flex justify-between items-center h-20 fixed '>
         <h1 className='text-3xl font-bold cursor-pointer'>Hamza</h1>
@@ -16,7 +16,7 @@ const Navbar = () => {
             <li className=' cursor-pointer'>Services</li>
             <li className=' cursor-pointer'>Projects</li>
         </ul>
-       <div className='flex gap-4 items-center'>
+       <div className='sm:flex gap-4 items-center hidden '>
        
        <Link to="/login" ><button className='cursor-pointer' >Login</button></Link>
 

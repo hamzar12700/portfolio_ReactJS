@@ -27,9 +27,9 @@ const Projects = () => {
 
   return (
     <div className={`mt-20 min-h-[80vh] ${theme ? "text-white" : "text-black"}`}>
-      <h1 className="text-center font-bold text-6xl mb-10">Recent Projects</h1>
+      <h1 className="text-center font-bold text-3xl sm:text-6xl mb-10">Recent Projects</h1>
 
-      <div className="flex flex-wrap justify-between items-center gap-5 mb-10">
+      <div className="flex md:flex-row flex-col flex-wrap justify-center items-center gap-15 mb-20">
         <h1>
           Github Username:{" "}
           <Link
@@ -56,16 +56,16 @@ const Projects = () => {
 
       {/* Github repo boxes */}
       <div className="flex flex-wrap gap-5 items-start justify-start">
-        {repos.splice(0,4).map((repo) => (
+        {/* {repos.splice(0,4).map((repo) => ( */}
           <ProjectsBoxes
-            key={repo.id}
-            id={repo.id}
-            name={repo.name}
-            avatar_url={user.avatar_url} 
-            html_url={repo.html_url}     
-            theme={theme}
+            // key={repo.id}
+            // id={repo.id}
+            // name={repo.name}
+            // avatar_url={user.avatar_url} 
+            // html_url={repo.html_url}     
+            // theme={theme}
           />
-        ))}
+        {/* ))} */}
 
       </div>
 <button onClick={()=>setMoreCards(!moreCards)} >See More</button>

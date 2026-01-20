@@ -47,9 +47,10 @@ export async function signup(req, res) {
     });
 
     // Send OTP via email
-    await sendEmail(email, otp);
+    // await sendEmail(email, otp);
 
-    res.status(201).json({ message: "OTP sent to email" });
+    // res.status(201).json({ message: "OTP sent to email" });
+    res.status(201).json({ message: "signup successfull" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error during signup" });

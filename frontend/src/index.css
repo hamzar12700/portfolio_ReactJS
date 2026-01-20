@@ -5,6 +5,9 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+:root{
+  --primary-color : blue;
+}
 
 
 .container {

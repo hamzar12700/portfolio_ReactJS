@@ -11,7 +11,7 @@ const ProjectsBoxes = ({ id, name }) => {
     >
       <img src="/link.png" width="100px" alt="" />
 
-      <span className='font-bold text-[17px]'>{name}</span>
+      <span className='font-bold text-[17px]'>fdgfdgf</span>
 
       <h1>
         Repo Link : <br />

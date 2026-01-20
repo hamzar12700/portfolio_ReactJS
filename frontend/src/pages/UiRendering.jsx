@@ -5,6 +5,7 @@ import Navbar from '../component/Navbar'
 import Projects from '../component/Projects'
 import { GlobalContext } from '../ContextApi/Context'
 import Footer from '../component/Footer'
+import Feedback from '../component/Feedback'
 
 const UiRendering = () => {
   const { theme } = useContext(GlobalContext)
@@ -19,6 +20,7 @@ const UiRendering = () => {
         <HeroSection/>
         <Experience/>
         <Projects/>
+        <Feedback/>
         <Footer/>
     </div>
 

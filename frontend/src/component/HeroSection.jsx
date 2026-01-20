@@ -18,14 +18,25 @@ const HeroSection = () => {
           </h2>
       
           <button
-            className={` sm:text-sm md:text-1xl
-              w-full md:w-auto mt-4 px-6 py-3 rounded-lg font-medium shadow-md
-              transition-all duration-300 cursor-pointer
-              ${theme ? 'bg-white text-black hover:bg-gray-200 hover:shadow hover:shadow-amber-50' : 'bg-black text-white hover:bg-gray-800'}
-            `}
-          >
-            Contact Us
-          </button>
+  className={`
+    w-full sm:w-full md:w-auto
+    px-4 sm:px-6 md:px-8
+    py-2.5 sm:py-3
+    text-sm sm:text-base md:text-lg
+    rounded-lg font-medium
+    shadow-md
+    transition-all duration-300
+    cursor-pointer
+    active:scale-95
+    ${theme
+      ? 'bg-white text-black hover:bg-gray-200 hover:shadow-amber-50'
+      : 'bg-black text-white hover:bg-gray-800'
+    }
+  `}
+>
+  Contact Us
+</button>
+
         </div>
       
         {/* Right Section */}
