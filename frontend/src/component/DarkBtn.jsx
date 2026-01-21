@@ -6,7 +6,7 @@ const DarkBtn = () => {
   const {theme , setTheme} = useContext(GlobalContext)
 
   return (
-    <div className="toggleWrapper">
+    <div className="toggleWrapper hidden md:flex ">
       <input
         type="checkbox"
         id="dn"
