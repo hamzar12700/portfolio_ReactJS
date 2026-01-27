@@ -26,12 +26,12 @@ const Projects = () => {
     return <div className="text-center mt-20 text-red-600 font-bold">{error}</div>;
 
   return (
-    <div className={`mt-20 min-h-[80vh] ${theme ? "text-white" : "text-black"}`}>
-      <h1 className="text-center font-bold text-3xl sm:text-6xl mb-10">Recent Projects</h1>
+    <div className={` min-h-[80vh] ${theme ? "text-white" : "text-black"} border-b container`}>
+      <h1 className="text-center font-bold text-3xl sm:text-6xl  ">Recent Projects</h1>
 
-      <div className="flex md:flex-row flex-col flex-wrap justify-center items-center gap-15 mb-20">
-        <h1>
-          Github Username:{" "}
+      <div className="flex md:flex-row flex-col flex-wrap justify-center items-center gap-5 my-10 md:text-md sm:text-sm">
+        <h1 className="">
+          Github Username:
           <Link
             className={`px-5 py-2 rounded font-bold ${
               theme ? "bg-gray-800 text-white" : "bg-blue-200 text-black"
